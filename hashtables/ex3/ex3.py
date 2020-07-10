@@ -1,8 +1,27 @@
+
+
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
     # Your code here
+    cache = {}
+    # return a list called result
+    result = []
+    # loop through array, and loop through each array
+    for array in arrays:
+        for number in array:
+            # check if the number is in the cache
+            if number in cache:
+                # move through array
+                cache[number] += 1
+                # if the index is the same as len
+                if cache[number] == len(arrays):
+                    result.append(number)
+                    # print(cache[number])
+                    # print(len(arrays))
+            else:
+                cache[number] = 1
 
     return result
 
